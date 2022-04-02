@@ -3,4 +3,4 @@ project(Projeto1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Projeto1 main.cpp FileHandler.cpp FileHandler.h)
+add_executable(Projeto1 main.cpp FileHandler.cpp FileHandler.h Estafeta.cpp Estafeta.h)

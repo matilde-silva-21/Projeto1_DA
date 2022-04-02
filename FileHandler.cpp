@@ -7,24 +7,32 @@
 #include "sstream"
 #include "string"
 #include "iostream"
+#include "Estafeta.h"
 
-void FileHandler::readCarrinhas() {
+std::map<int, Estafeta> FileHandler::readCarrinhas() {
+    std::map<int, Estafeta> estafetas;
+    int count = 1;
     std::string words[4];
     std::string line;
     std::ifstream file("data/carrinhas.txt");
     if(file.is_open()){
         getline (file, line); //primeira linha é para descartar;
         while(getline (file, line)){
+            std::string matricula = "XX-XX-XX";
             split_str(line, ' ', words);
-            //falta meter a parte em que se inicializa uma variavel do tipo Carrinha ou Estafeta
-
+            Estafeta e1(count, matricula, std::stoi(words[0]), std::stoi(words[1]), std::stoi(words[2]));
+            estafetas.insert(estafetas.begin(), std::pair<int,Estafeta> (count, e1));
+            count++;
         }
         file.close();
     }
 
     else{std::cout << "Can't open file!\n";}
 
+    return estafetas;
+
 }
+
 
 void FileHandler::readEncomendas() {
     std::string words[4];

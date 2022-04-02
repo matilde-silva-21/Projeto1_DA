@@ -6,13 +6,15 @@
 #define PROJETO1_FILEHANDLER_H
 
 #include "string"
+#include "Estafeta.h"
+#include "map"
 
 
 
 class FileHandler {
 
 public:
-    void readCarrinhas();
+    std::map<int, Estafeta> readCarrinhas();
     void readEncomendas();
     void split_str( std::string const &str, char delim, std::string (&words)[4]);
 
