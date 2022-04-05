@@ -7,6 +7,7 @@
 
 #include "string"
 #include "Estafeta.h"
+#include "Pedido.h"
 #include "map"
 
 
@@ -14,8 +15,8 @@
 class FileHandler {
 
 public:
-    std::map<int, Estafeta> readCarrinhas();
-    void readEncomendas();
+    std::map<int, Estafeta> readCarrinhas(); //inicializar o armazem com isto
+    std::map<int, Pedido> readPedidos(); //como é que eu distingo uma entrega expresso de uma normal
     void split_str( std::string const &str, char delim, std::string (&words)[4]);
 
 };

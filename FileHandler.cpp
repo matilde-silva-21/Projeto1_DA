@@ -34,7 +34,7 @@ std::map<int, Estafeta> FileHandler::readCarrinhas() {
 }
 
 
-void FileHandler::readEncomendas() {
+std::map<int, Pedido> FileHandler::readPedidos() {
     std::string words[4];
     std::string line;
     std::ifstream file("data/encomendas.txt");
@@ -43,7 +43,6 @@ void FileHandler::readEncomendas() {
         while(getline (file, line)){
             split_str(line, ' ', words);
 
-            //falta meter a parte em que se inicializa uma variavel do tipo Encomenda
         }
         file.close();
     }
