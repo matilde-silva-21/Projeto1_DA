@@ -39,3 +39,10 @@ considerando-se os campos apropriados. Os datasets poderão ser manipulados, est
 editados da forma como os grupos julgarem mais adequada, de acordo com as soluções que
 propõem implementar. Outros datasets poderão também ser considerados e utilizados pelos
 grupos.'
+
+<p align="center">
+  <img src="data/Class_Diagram_DA_T1.svg"/>
+</p>
+<p align="center">
+  <b><i>Image 2. UML Class Diagram</i></b>
+</p>
