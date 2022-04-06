@@ -42,5 +42,4 @@ public:
 
 };
 
-
 #endif //PROJETO1_ESTAFETA_H

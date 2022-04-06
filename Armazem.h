@@ -7,20 +7,20 @@
 
 #include <map>
 #include "Estafeta.h"
-#include "Pedido.h"
+#include "Encomenda.h"
 
 class Armazem {
     std::map<int, Estafeta> estafetas;
-    std::map<int, Pedido> pedidos; //pedidos por entregar ou todos alguma vez feitos?
+    std::map<int, Encomenda> pedidos; //pedidos por entregar ou todos alguma vez feitos?
     int totalestafetas=estafetas.size(), totalpedidos=pedidos.size();
 
 public:
     std::map<int, Estafeta> getestafetas();
-    std::map<int, Pedido> getpedidos();
+    std::map<int, Encomenda> getpedidos();
     int gettotalestafetas();
     int gettotalpedidos();
     void setestafetas(std::map<int, Estafeta>& estafetas);
-    void setpedidos(std::map<int, Pedido>& pedidos);
+    void setpedidos(std::map<int, Encomenda>& pedidos);
 
 };
 

@@ -8,7 +8,7 @@ std::map<int, Estafeta> Armazem::getestafetas() {
     return this->estafetas;
 }
 
-std::map<int, Pedido> Armazem::getpedidos() {
+std::map<int, Encomenda> Armazem::getpedidos() {
     return this->pedidos;
 }
 
@@ -24,6 +24,6 @@ void Armazem::setestafetas(std::map<int, Estafeta> &estafetas) {
     this->estafetas=estafetas;
 }
 
-void Armazem::setpedidos(std::map<int, Pedido> &pedidos) {
+void Armazem::setpedidos(std::map<int, Encomenda> &pedidos) {
     this->pedidos=pedidos;
 }

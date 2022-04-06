@@ -34,7 +34,7 @@ std::map<int, Estafeta> FileHandler::readCarrinhas() {
 }
 
 
-std::map<int, Pedido> FileHandler::readPedidos() {
+std::map<int, Encomenda> FileHandler::readEncomendas() {
     std::string words[4];
     std::string line;
     std::ifstream file("data/encomendas.txt");

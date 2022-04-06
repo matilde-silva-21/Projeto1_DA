@@ -2,26 +2,29 @@
 // Created by Matilde on 05/04/2022.
 //
 
-#ifndef PROJETO1_ENTREGA_H
-#define PROJETO1_ENTREGA_H
+#ifndef PROJETO1_ENCOMENDA_H
+#define PROJETO1_ENCOMENDA_H
 
 #include "string"
 #include "map"
-#include "Pedido.h"
+#include "Estafeta.h"
 
-static int id_cntr=0; //devia ser um long ?
+ //devia ser um long ?
 
-class Entrega {
-    std::map<int, Pedido> pedidos; //aqui devia ser um mapa de pedidos expressos e outro normais? um mapa para todos os pedidos nao me parece bem
+class Encomenda {
+    static int id_cntr;
     int id;
     std::string destino;
+    int recompensa;
+    int volume;
+    int peso;
 public:
-    Entrega(std::string& destino);
+    Encomenda(std::string& destino);
     std::string getdestino();
     void setdestino(std::string& destino);
 };
 
-class Expresso: private Entrega{
+class Expresso: private Encomenda{
     int tempoentrega;
 public:
     Expresso(std::string& destino, int& tempoentrega);
@@ -29,11 +32,9 @@ public:
     void settempoentrega(int& tempoentrega);
 };
 
-class Normal: private Entrega{
+class Normal: private Encomenda{
     //volume e peso total da entrega, soma peso e volume de todos os pedidos
-    int volume;
-    int peso;
-
+    Estafeta estafeta;
 public:
     Normal(std::string& destino, int& volume, int peso);
     int getvolume();
@@ -42,4 +43,6 @@ public:
     void setpeso(int& peso);
 };
 
-#endif //PROJETO1_ENTREGA_H
+int Encomenda::id_cntr=0;
+
+#endif //PROJETO1_ENCOMENDA_H
