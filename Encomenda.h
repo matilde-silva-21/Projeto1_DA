@@ -9,40 +9,43 @@
 #include "map"
 #include "Estafeta.h"
 
- //devia ser um long ?
+
 
 class Encomenda {
-    static int id_cntr;
+    static int id_cntr_enc;
     int id;
-    std::string destino;
     int recompensa;
     int volume;
     int peso;
 public:
-    Encomenda(std::string& destino);
-    std::string getdestino();
-    void setdestino(std::string& destino);
+    Encomenda(int volume, int peso, int recompensa);
+    int getvolume();
+    int getpeso();
+    void setvolume(int& volume);
+    void setpeso(int& peso);
+    void setrecompensa(int& recompensa);
+    int getrecompensa();
+    int getid();
 };
 
 class Expresso: private Encomenda{
     int tempoentrega;
 public:
-    Expresso(std::string& destino, int& tempoentrega);
+    Expresso(int volume, int peso, int recompensa, int& tempoentrega);
     int gettempoentrega();
     void settempoentrega(int& tempoentrega);
+    bool operator < (Expresso& e1) const;
+    bool operator == (Expresso& e1) const;
+
 };
 
 class Normal: private Encomenda{
     //volume e peso total da entrega, soma peso e volume de todos os pedidos
     Estafeta estafeta;
 public:
-    Normal(std::string& destino, int& volume, int peso);
-    int getvolume();
-    int getpeso();
-    void setvolume(int& volume);
-    void setpeso(int& peso);
+    Normal(int volume, int peso, int recompensa, Estafeta& e1);
 };
 
-int Encomenda::id_cntr=0;
+
 
 #endif //PROJETO1_ENCOMENDA_H

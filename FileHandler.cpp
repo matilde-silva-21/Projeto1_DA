@@ -20,9 +20,8 @@ std::map<int, Estafeta> FileHandler::readCarrinhas() {
         while(getline (file, line)){
             std::string matricula = "XX-XX-XX";
             split_str(line, ' ', words);
-            Estafeta e1(count, matricula, std::stoi(words[0]), std::stoi(words[1]), std::stoi(words[2]));
-            estafetas.insert(estafetas.begin(), std::pair<int,Estafeta> (count, e1));
-            count++;
+            Estafeta e1(matricula, std::stoi(words[0]), std::stoi(words[1]), std::stoi(words[2]));
+            estafetas.insert(estafetas.begin(), std::pair<int,Estafeta> (e1.getid(), e1));
         }
         file.close();
     }
@@ -36,19 +35,22 @@ std::map<int, Estafeta> FileHandler::readCarrinhas() {
 
 std::map<int, Encomenda> FileHandler::readEncomendas() {
     std::string words[4];
+    std::map<int, Encomenda> encomendas;
     std::string line;
     std::ifstream file("data/encomendas.txt");
     if(file.is_open()){
         getline (file, line); //primeira linha é para descartar;
         while(getline (file, line)){
             split_str(line, ' ', words);
-
+            Encomenda e1(std::stoi(words[0]), std::stoi(words[1]), std::stoi(words[2]));
+            encomendas.insert(encomendas.begin(), std::make_pair(e1.getid(), e1));
         }
         file.close();
     }
 
     else{std::cout << "Can't open file!\n";}
 
+    return encomendas;
 }
 
 void FileHandler::split_str( std::string const &str, const char delim, std::string (&words)[4])

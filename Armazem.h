@@ -11,16 +11,16 @@
 
 class Armazem {
     std::map<int, Estafeta> estafetas;
-    std::map<int, Encomenda> pedidos; //pedidos por entregar ou todos alguma vez feitos?
-    int totalestafetas=estafetas.size(), totalpedidos=pedidos.size();
+    std::map<int, Encomenda> encomendas;
+    int totalestafetas=estafetas.size(), totalencomendas=encomendas.size();
 
 public:
     std::map<int, Estafeta> getestafetas();
     std::map<int, Encomenda> getpedidos();
     int gettotalestafetas();
-    int gettotalpedidos();
-    void setestafetas(std::map<int, Estafeta>& estafetas);
-    void setpedidos(std::map<int, Encomenda>& pedidos);
+    int gettotalencomendas();
+    void setestafetas(std::map<int, Estafeta> estafetas);
+    void setencomendas(std::map<int, Encomenda> encomendas);
 
 };
 

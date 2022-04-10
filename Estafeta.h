@@ -7,12 +7,13 @@
 #include <string>
 
 class Estafeta {
+    static int id_cntr_est;
     int id;
     std::string matricula;
     int pesomax, volmax, tarifa; //peso - kg ; vol - m^3 ;  tarifa - €/hora
 
 public:
-    Estafeta(int id, std::string matricula, int pesomax, int volmax, int tarifa);
+    Estafeta(std::string matricula, int pesomax, int volmax, int tarifa);
     int getid();
     std::string getmatricula();
     int getpesomax();
@@ -41,5 +42,7 @@ public:
 
 
 };
+
+
 
 #endif //PROJETO1_ESTAFETA_H

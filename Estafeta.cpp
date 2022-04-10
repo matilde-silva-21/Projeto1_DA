@@ -4,6 +4,7 @@
 
 #include "Estafeta.h"
 
+int Estafeta::id_cntr_est = 0;
 
 int Estafeta::getid() {
     return this->id;
@@ -45,6 +46,6 @@ void Estafeta::settarifa(int tarifa) {
     this->tarifa = tarifa;
 }
 
-Estafeta::Estafeta(int id, std::string matricula, int pesomax, int volmax, int tarifa): id(id), matricula(std::move(matricula)), pesomax(pesomax), volmax(volmax), tarifa(tarifa) {
+Estafeta::Estafeta(std::string matricula, int pesomax, int volmax, int tarifa): id(++id_cntr_est), matricula(std::move(matricula)), pesomax(pesomax), volmax(volmax), tarifa(tarifa) {
 
 }

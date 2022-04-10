@@ -4,16 +4,10 @@
 
 #include "Encomenda.h"
 
-std::string Encomenda::getdestino() {
-    return this->destino;
-}
+int Encomenda::id_cntr_enc=0;
 
-void Encomenda::setdestino(std::string& destino) {
-    this->destino=destino;
+Encomenda::Encomenda(int volume, int peso, int recompensa): id(++id_cntr_enc), volume(volume), peso(peso), recompensa(recompensa) {
 
-}
-
-Encomenda::Encomenda(std::string &destino):destino(destino), id(id_cntr++) {
 }
 
 int Expresso::gettempoentrega() {
@@ -24,26 +18,46 @@ void Expresso::settempoentrega(int& tempoentrega) {
     this->tempoentrega=tempoentrega;
 }
 
-Expresso::Expresso(std::string &destino, int &tempoentrega): Encomenda(destino), tempoentrega(tempoentrega) {
+Expresso::Expresso(int volume, int peso, int recompensa, int& tempoentrega): Encomenda(volume, peso, recompensa), tempoentrega(tempoentrega) {
 
 }
 
-int Normal::getvolume() {
+bool Expresso::operator<(Expresso &e1) const {
+    return tempoentrega < e1.tempoentrega;
+}
+
+bool Expresso::operator == (Expresso& e1) const{
+    return tempoentrega == e1.tempoentrega;
+}
+
+int Encomenda::getvolume() {
     return this->volume;
 }
 
-int Normal::getpeso() {
+int Encomenda::getpeso() {
     return this->peso;
 }
 
-void Normal::setvolume(int& volume) {
+void Encomenda::setvolume(int& volume) {
     this->volume=volume;
 }
 
-void Normal::setpeso(int &peso) {
+void Encomenda::setpeso(int &peso) {
     this->peso=peso;
 }
 
-Normal::Normal(std::string &destino, int &volume, int peso): Encomenda(destino), volume(volume), peso(peso) {
+void Encomenda::setrecompensa(int &recompensa) {
+    this->recompensa=recompensa;
+}
+
+int Encomenda::getrecompensa() {
+    return recompensa;
+}
+
+int Encomenda::getid() {
+    return id;
+}
+
+Normal::Normal(int volume, int peso, int recompensa, Estafeta& e1): Encomenda(volume, peso, recompensa), estafeta(e1) {
 
 }

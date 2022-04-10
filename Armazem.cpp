@@ -9,21 +9,21 @@ std::map<int, Estafeta> Armazem::getestafetas() {
 }
 
 std::map<int, Encomenda> Armazem::getpedidos() {
-    return this->pedidos;
+    return this->encomendas;
 }
 
 int Armazem::gettotalestafetas() {
     return this->totalestafetas;
 }
 
-int Armazem::gettotalpedidos() {
-    return this->totalpedidos;
+int Armazem::gettotalencomendas() {
+    return this->totalencomendas;
 }
 
-void Armazem::setestafetas(std::map<int, Estafeta> &estafetas) {
+void Armazem::setestafetas(std::map<int, Estafeta> estafetas) {
     this->estafetas=estafetas;
 }
 
-void Armazem::setpedidos(std::map<int, Encomenda> &pedidos) {
-    this->pedidos=pedidos;
+void Armazem::setencomendas(std::map<int, Encomenda> encomendas) {
+    this->encomendas = encomendas;
 }
