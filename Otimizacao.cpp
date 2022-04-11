@@ -12,8 +12,16 @@ Otimizacao::Otimizacao(Armazem &a1): armazem(a1) {
 
 }
 
-void Otimizacao::cenario3() {
-
+float Otimizacao::cenario3() {
+    MinHeap<int, int> mark = makeminheap();
+    int time = (17-9)*60*60;
+    float sum=0, cnt=0;//o numero de segundos entre as 9 e as 17, por isso o numero de segundos disponiveis num dia para entregar as encomendas
+    while (time>0){
+        int cur = mark.removeMin().second;
+        if(time>cur) {time-=cur; sum+=cur; cnt++;}
+        else{break;}
+    }
+    return (sum/cnt);
 }
 
 MinHeap<int, int> Otimizacao::makeminheap() {

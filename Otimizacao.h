@@ -23,7 +23,7 @@ public:
 
 /*cenario 3*/
     MinHeap<int, int> makeminheap();
-    void cenario3(); //minheap talvez seja util , com key = id_entrega e value = tempo_entrega (menos memoria) ou objeto encomenda
+    float cenario3(); //retorna o numero medio de tempo por entrega
 };
 
 
