@@ -28,10 +28,10 @@ public:
     int getid();
 };
 
-class Expresso: private Encomenda{
+class Expresso: public Encomenda{
     int tempoentrega;
 public:
-    Expresso(int volume, int peso, int recompensa, int& tempoentrega);
+    Expresso(int volume, int peso, int recompensa, int tempoentrega);
     int gettempoentrega();
     void settempoentrega(int& tempoentrega);
     bool operator < (Expresso& e1) const;
@@ -39,7 +39,7 @@ public:
 
 };
 
-class Normal: private Encomenda{
+class Normal: public Encomenda{
     //volume e peso total da entrega, soma peso e volume de todos os pedidos
     Estafeta estafeta;
 public:

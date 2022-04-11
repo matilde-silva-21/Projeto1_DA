@@ -18,7 +18,7 @@ public:
     std::map<int, Estafeta> readCarrinhas(); //inicializar o armazem com isto
     std::map<int, Encomenda> readEncomendas(); //como é que eu distingo uma entrega expresso de uma normal
     void split_str( std::string const &str, char delim, std::string (&words)[4]);
-
+    std::map<int, Expresso> readExpresso();
 };
 
 

@@ -53,6 +53,26 @@ std::map<int, Encomenda> FileHandler::readEncomendas() {
     return encomendas;
 }
 
+std::map<int, Expresso> FileHandler::readExpresso() {
+    std::string words[4];
+    std::map<int, Expresso> expresso;
+    std::string line;
+    std::ifstream file("data/encomendas.txt");
+    if(file.is_open()){
+        getline (file, line); //primeira linha é para descartar;
+        while(getline (file, line)){
+            split_str(line, ' ', words);
+            Expresso e1(std::stoi(words[0]), std::stoi(words[1]), std::stoi(words[2]), std::stoi(words[3]));
+            expresso.insert(expresso.begin(), std::make_pair(e1.getid(), e1));
+        }
+        file.close();
+    }
+
+    else{std::cout << "Can't open file!\n";}
+
+    return expresso;
+}
+
 void FileHandler::split_str( std::string const &str, const char delim, std::string (&words)[4])
 {
     // create a stream from the string

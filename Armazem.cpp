@@ -27,3 +27,11 @@ void Armazem::setestafetas(std::map<int, Estafeta> estafetas) {
 void Armazem::setencomendas(std::map<int, Encomenda> encomendas) {
     this->encomendas = encomendas;
 }
+
+void Armazem::setexpresso(std::map<int, Expresso> expresso) {
+    this->expresso = expresso;
+}
+
+std::map<int, Expresso> Armazem::getexpresso() {
+    return expresso;
+}

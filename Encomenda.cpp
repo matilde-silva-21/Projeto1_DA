@@ -18,7 +18,7 @@ void Expresso::settempoentrega(int& tempoentrega) {
     this->tempoentrega=tempoentrega;
 }
 
-Expresso::Expresso(int volume, int peso, int recompensa, int& tempoentrega): Encomenda(volume, peso, recompensa), tempoentrega(tempoentrega) {
+Expresso::Expresso(int volume, int peso, int recompensa, int tempoentrega): Encomenda(volume, peso, recompensa), tempoentrega(tempoentrega) {
 
 }
 

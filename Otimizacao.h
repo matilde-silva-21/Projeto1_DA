@@ -8,9 +8,21 @@
 #include "Encomenda.h"
 #include "Armazem.h"
 #include "FileHandler.h"
+#include "minHeap.h"
 
 
 class Otimizacao {
+    Armazem armazem;
+    map<int, Encomenda> encomendas = armazem.getpedidos();
+    map<int, Estafeta> estafetas = armazem.getestafetas();
+    map<int, Expresso> expresso = armazem.getexpresso();
+public:
+    explicit Otimizacao(Armazem& a1);
+    void setarmazem(Armazem& a1);
+
+
+/*cenario 3*/
+    MinHeap<int, int> makeminheap();
     void cenario3(); //minheap talvez seja util , com key = id_entrega e value = tempo_entrega (menos memoria) ou objeto encomenda
 };
 
