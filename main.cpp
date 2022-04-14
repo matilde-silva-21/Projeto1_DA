@@ -10,6 +10,7 @@ int main() {
     a1.setestafetas(f1.readCarrinhas());
     a1.setexpresso(f1.readExpresso());
     Otimizacao o1(a1);
-    std::cout << o1.cenario3();
+    std::cout << o1.cenario2();
+    //std::cout << o1.cenario3();
     return 0;
 }

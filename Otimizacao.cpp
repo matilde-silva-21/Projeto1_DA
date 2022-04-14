@@ -2,6 +2,7 @@
 // Created by Matilde on 06/04/2022.
 //
 
+#include <iostream>
 #include "Otimizacao.h"
 
 void Otimizacao::setarmazem(Armazem &a1) {
@@ -10,6 +11,30 @@ void Otimizacao::setarmazem(Armazem &a1) {
 
 Otimizacao::Otimizacao(Armazem &a1): armazem(a1) {
 
+}
+
+float Otimizacao::cenario2() {
+    MaxHeap<int, int> recompensa = makemaxheap_recompensa();
+    MinHeap<int, int> custo = makeminheap_custo();
+    float lucrototal = 0, lucro;
+    while (lucrototal >= 0) {
+        lucro = 0;
+        int est_id = custo.removeMin().first;
+        Estafeta est = estafetas.find(est_id)->second;
+        int est_vol = est.getvolmax();
+        int est_peso = est.getpesomax();
+        while (est_vol >= 0 && est_peso >=0) {
+            int enc_id = recompensa.removeMax().first;
+            Encomenda enc = encomendas.find(enc_id)->second;
+            est_vol -= enc.getvolume();
+            est_peso -= enc.getpeso();
+            lucro += enc.getrecompensa();
+        }
+        lucro -= est.gettarifa();
+        if (lucro <= 0) { break; }
+        lucrototal += lucro;
+    }
+    return lucrototal;
 }
 
 float Otimizacao::cenario3() {
@@ -22,6 +47,22 @@ float Otimizacao::cenario3() {
         else{break;}
     }
     return (sum/cnt);
+}
+
+MaxHeap<int, int> Otimizacao::makemaxheap_recompensa() {
+    MaxHeap<int, int> recompensa(encomendas.size(), -1);
+    for (auto& it: encomendas){
+        recompensa.insert(it.first, it.second.getrecompensa() / (it.second.getvolume() + it.second.getpeso()));
+    }
+    return recompensa;
+}
+
+MinHeap<int, int> Otimizacao::makeminheap_custo() {
+    MinHeap<int, int> custo(estafetas.size(), -1);
+    for (auto& it: estafetas){
+        custo.insert(it.first, it.second.gettarifa() / (it.second.getvolmax() + it.second.getpesomax()));
+    }
+    return custo;
 }
 
 MinHeap<int, int> Otimizacao::makeminheap() {

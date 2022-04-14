@@ -8,6 +8,7 @@
 #include "Encomenda.h"
 #include "Armazem.h"
 #include "FileHandler.h"
+#include "maxHeap.h"
 #include "minHeap.h"
 
 
@@ -20,6 +21,12 @@ public:
     explicit Otimizacao(Armazem& a1);
     void setarmazem(Armazem& a1);
 
+
+/*cenario 2*/
+    //int max(int x, int y); //retorna o max entre x e y
+    MaxHeap<int, int> makemaxheap_recompensa(); //max heap com prioridade é a recompensa / espaço ocupado pela encomenda - espaço será a soma do voluma e do peso da encomenda
+    MinHeap<int, int> makeminheap_custo(); //min heap com prioridade é o custo / espaço da carrinha - espaço será a soma do voluma e do peso
+    float cenario2(); //retorna o valor do lucro máximo
 
 /*cenario 3*/
     MinHeap<int, int> makeminheap();
