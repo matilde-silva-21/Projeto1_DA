@@ -13,10 +13,10 @@ Otimizacao::Otimizacao(Armazem &a1): armazem(a1) {
 
 }
 
-float Otimizacao::cenario2() {
+int Otimizacao::cenario2() {
     MaxHeap<int, int> recompensa = makemaxheap_recompensa();
     MinHeap<int, int> custo = makeminheap_custo();
-    float lucrototal = 0, lucro;
+    int lucrototal = 0, lucro;
     while (lucrototal >= 0) {
         lucro = 0;
         int est_id = custo.removeMin().first;
