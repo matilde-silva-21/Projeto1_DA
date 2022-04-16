@@ -49,6 +49,22 @@ float Otimizacao::cenario3() {
     return (sum/cnt);
 }
 
+MaxHeap<int, int> Otimizacao::makeminheap_estafetas() {
+    MaxHeap<int, int> carrinhas(estafetas.size(), -1);
+    for(auto& i: estafetas){
+        carrinhas.insert(i.first, i.second.getvolmax());
+    }
+    return carrinhas;
+}
+
+MinHeap<int, int> Otimizacao::makeminheap_pedidos() {
+    MinHeap<int, int> pedidos(encomendas.size(), -1);
+    for(auto& i: encomendas){
+        pedidos.insert(i.first, i.second.getvolume());
+    }
+    return pedidos;
+}
+
 MaxHeap<int, int> Otimizacao::makemaxheap_recompensa() {
     MaxHeap<int, int> recompensa(encomendas.size(), -1);
     for (auto& it: encomendas){

@@ -21,6 +21,10 @@ public:
     explicit Otimizacao(Armazem& a1);
     void setarmazem(Armazem& a1);
 
+/*cenario 1*/
+
+    MaxHeap<int, int> makeminheap_estafetas(); // max heap como prioridade é o espaço da estafeta, ou seja, seu volume e peso
+    MinHeap<int, int> makeminheap_pedidos(); // min heap como prioridade é o volume e peso dos pedidos
 
 /*cenario 2*/
     MaxHeap<int, int> makemaxheap_recompensa(); //max heap com prioridade é a recompensa / espaço ocupado pela encomenda - espaço será a soma do voluma e do peso da encomenda
