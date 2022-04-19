@@ -24,6 +24,7 @@ public:
 /*cenario 3*/
     MinHeap<int, int> makeminheap();
     float cenario3(); //retorna o numero medio de tempo por entrega
+    int getn(int n); //funcao para retornar o tamanho do dataset do cenario n
 };
 
 

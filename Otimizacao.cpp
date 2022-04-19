@@ -31,3 +31,16 @@ MinHeap<int, int> Otimizacao::makeminheap() {
     }
     return treat;
 }
+
+int Otimizacao::getn(int n) {
+    switch (n) {
+        case 1:
+            return estafetas.size();
+        case 2:
+            return encomendas.size();
+        case 3:
+            return expresso.size();
+        default:
+            return -1;
+    }
+}
