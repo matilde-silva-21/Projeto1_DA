@@ -26,9 +26,15 @@ int Otimizacao::cenario2() {
         while (est_vol >= 0 && est_peso >=0) {
             int enc_id = recompensa.removeMax().first;
             Encomenda enc = encomendas.find(enc_id)->second;
-            est_vol -= enc.getvolume();
-            est_peso -= enc.getpeso();
-            lucro += enc.getrecompensa();
+            if ((est_vol - enc.getvolume()) >= 0 && (est_peso - enc.getpeso() >= 0)) {
+                est_vol -= enc.getvolume();
+                est_peso -= enc.getpeso();
+                lucro += enc.getrecompensa();
+            }
+            else {
+                recompensa.insert(enc_id, enc.getrecompensa() / (enc.getvolume() + enc.getpeso()));
+                break;
+            }
         }
         lucro -= est.gettarifa();
         if (lucro <= 0) { break; }

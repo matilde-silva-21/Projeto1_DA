@@ -44,7 +44,7 @@ public:
 // Make a value go "up the tree" until it reaches its position
 template <class K, class V>
 void MaxHeap<K,V>::upHeap(int i) {
-    while (i<1 && a[i].value > a[PARENT(i)].value) { // while pos greater than parent, keep swapping to upper position
+    while (i>1 && a[i].value > a[PARENT(i)].value) { // while pos greater than parent, keep swapping to upper position
         swap(i, PARENT(i));
         i = PARENT(i);
     }
