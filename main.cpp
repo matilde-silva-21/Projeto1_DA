@@ -2,6 +2,7 @@
 #include "FileHandler.h"
 #include "Armazem.h"
 #include "Otimizacao.h"
+#include <ctime>
 
 int main() {
     clock_t start = clock();
@@ -12,8 +13,6 @@ int main() {
     a1.setestafetas(f1.readCarrinhas());
     a1.setexpresso(f1.readExpresso());
     Otimizacao o1(a1);
-    //cenario2
-    //std::cout << o1.cenario2() << "(EUR)" << endl;
 
     clock_t stop = clock();
     double elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
