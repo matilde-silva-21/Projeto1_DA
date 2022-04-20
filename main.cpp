@@ -12,16 +12,14 @@ int main() {
     a1.setestafetas(f1.readCarrinhas());
     a1.setexpresso(f1.readExpresso());
     Otimizacao o1(a1);
+    //cenario2
+    //std::cout << o1.cenario2() << "(EUR)" << endl;
 
     clock_t stop = clock();
     double elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
 
     cout << "Time elapsed: "<<elapsed<<"\nAverage time of each iteration (elapsed time/n): "<<elapsed/(o1.getn(3))<<endl;
 
-    //cenario2
-    std::cout << o1.cenario2() << "(EUR)" << endl;
-
-    //cenario3
-    //std::cout << "\nAverage time of express deliveries: "<< o1.cenario3() <<"(s)"<<endl;
+    std::cout << "\nAverage time of express deliveries: "<< o1.cenario3() <<"(s)"<<endl;
     return 0;
 }
