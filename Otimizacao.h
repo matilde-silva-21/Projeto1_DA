@@ -22,6 +22,9 @@ public:
 
 
 /*cenario 3*/
+    /** @brief
+     * Cria MinHeap com a key igual ao ID da Encomenda e value igual ao tempo de entrega.
+     */
     MinHeap<int, int> makeminheap();
     float cenario3(); //retorna o numero medio de tempo por entrega
     int getn(int n); //funcao para retornar o tamanho do dataset do cenario n

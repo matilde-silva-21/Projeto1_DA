@@ -12,14 +12,6 @@ std::map<int, Encomenda> Armazem::getpedidos() {
     return this->encomendas;
 }
 
-int Armazem::gettotalestafetas() {
-    return this->totalestafetas;
-}
-
-int Armazem::gettotalencomendas() {
-    return this->totalencomendas;
-}
-
 void Armazem::setestafetas(std::map<int, Estafeta> estafetas) {
     this->estafetas=estafetas;
 }

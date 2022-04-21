@@ -18,6 +18,10 @@ class Encomenda {
     int volume;
     int peso;
 public:
+    /**
+     * @brief
+     * Construtor da classe Encomenda, inicializa atributos do objeto da classe Encomenda
+     */
     Encomenda(int volume, int peso, int recompensa);
     int getvolume();
     int getpeso();
@@ -31,6 +35,10 @@ public:
 class Expresso: public Encomenda{
     int tempoentrega;
 public:
+    /**
+     * @brief
+     * Construtor da classe Expresso, inicializa atributos do objeto da classe Expresso
+     */
     Expresso(int volume, int peso, int recompensa, int tempoentrega);
     int gettempoentrega();
     void settempoentrega(int& tempoentrega);
@@ -40,9 +48,12 @@ public:
 };
 
 class Normal: public Encomenda{
-    //volume e peso total da entrega, soma peso e volume de todos os pedidos
     Estafeta estafeta;
 public:
+    /**
+     * @brief
+     * Construtor da classe Normal, inicializa atributos do objeto da classe Normal
+     */
     Normal(int volume, int peso, int recompensa, Estafeta& e1);
 };
 

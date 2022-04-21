@@ -19,8 +19,7 @@ public:
     std::map<int, Estafeta> getestafetas();
     std::map<int, Encomenda> getpedidos();
     std::map<int, Expresso> getexpresso();
-    int gettotalestafetas();
-    int gettotalencomendas();
+
     void setestafetas(std::map<int, Estafeta> estafetas);
     void setencomendas(std::map<int, Encomenda> encomendas);
     void setexpresso(std::map<int, Expresso> expresso);

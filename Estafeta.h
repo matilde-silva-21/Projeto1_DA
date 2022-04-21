@@ -13,6 +13,9 @@ class Estafeta {
     int pesomax, volmax, tarifa; //peso - kg ; vol - m^3 ;  tarifa - €/hora
 
 public:
+    /** @brief
+     * Construtor da classe Estafeta, inicializa os atributos do objeto Estafeta
+     */
     Estafeta(std::string matricula, int pesomax, int volmax, int tarifa);
     int getid();
     std::string getmatricula();
