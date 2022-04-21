@@ -19,6 +19,10 @@ int main() {
 
     cout << "Time elapsed: "<<elapsed<<"\nAverage time of each iteration (elapsed time/n): "<<elapsed/(o1.getn(3))<<endl;
 
+    //cenario2
+    //std::cout << o1.cenario2() << endl;
+
+    //cenario3
     std::cout << "\nAverage time of express deliveries: "<< o1.cenario3() <<"(s)"<<endl;
     return 0;
 }
