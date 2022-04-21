@@ -3,4 +3,4 @@ project(Projeto1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Projeto1 main.cpp FileHandler.cpp FileHandler.h Estafeta.cpp Estafeta.h Encomenda.cpp Encomenda.h Armazem.cpp Armazem.h Otimizacao.cpp Otimizacao.h minHeap.h maxHeap.h)
+add_executable(Projeto1 codigo/main.cpp codigo/FileHandler.cpp codigo/FileHandler.h codigo/Estafeta.cpp codigo/Estafeta.h codigo/Encomenda.cpp codigo/Encomenda.h codigo/Armazem.cpp codigo/Armazem.h codigo/Otimizacao.cpp codigo/Otimizacao.h codigo/minHeap.h codigo/maxHeap.h)
