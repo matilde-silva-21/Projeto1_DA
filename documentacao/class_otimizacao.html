@@ -80,6 +80,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaed73c6b4fc76171df8b896e51f19e00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_otimizacao.html#aaed73c6b4fc76171df8b896e51f19e00">getn</a> (int n)</td></tr>
 <tr class="memdesc:aaed73c6b4fc76171df8b896e51f19e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o tamanho do dataset mediante o cenário em análise.  <a href="class_otimizacao.html#aaed73c6b4fc76171df8b896e51f19e00">More...</a><br /></td></tr>
 <tr class="separator:aaed73c6b4fc76171df8b896e51f19e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad705f041c4c2f673804dc6237b79e36a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_max_heap.html">MaxHeap</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_otimizacao.html#ad705f041c4c2f673804dc6237b79e36a">makemaxheap_estafetas</a> ()</td></tr>
+<tr class="memdesc:ad705f041c4c2f673804dc6237b79e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria <a class="el" href="class_max_heap.html">MaxHeap</a> com a key igual ao ID da <a class="el" href="class_estafeta.html">Estafeta</a> e value igual ao volume da estafeta correspondente.  <a href="class_otimizacao.html#ad705f041c4c2f673804dc6237b79e36a">More...</a><br /></td></tr>
+<tr class="separator:ad705f041c4c2f673804dc6237b79e36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a508d2ede6d2f0539ce970093849b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_min_heap.html">MinHeap</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_otimizacao.html#a69a508d2ede6d2f0539ce970093849b5">makeminheap_pedidos</a> ()</td></tr>
+<tr class="memdesc:a69a508d2ede6d2f0539ce970093849b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria <a class="el" href="class_min_heap.html">MinHeap</a> com a key igual ao ID da <a class="el" href="class_encomenda.html">Encomenda</a> e value igual ao volume do pedido correspondente.  <a href="class_otimizacao.html#a69a508d2ede6d2f0539ce970093849b5">More...</a><br /></td></tr>
+<tr class="separator:a69a508d2ede6d2f0539ce970093849b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8621f8f05ecfb55f75f5ed6547d73f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_otimizacao.html#ae8621f8f05ecfb55f75f5ed6547d73f6">cenario1</a> ()</td></tr>
+<tr class="memdesc:ae8621f8f05ecfb55f75f5ed6547d73f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o número de estafetas necessárias, pela solução greedy, para entregar todos os pedidos possíveis.  <a href="class_otimizacao.html#ae8621f8f05ecfb55f75f5ed6547d73f6">More...</a><br /></td></tr>
+<tr class="separator:ae8621f8f05ecfb55f75f5ed6547d73f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cf15aced1fd667cb33ce8a70ec1fc11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_max_heap.html">MaxHeap</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_otimizacao.html#a1cf15aced1fd667cb33ce8a70ec1fc11">makemaxheap_recompensa</a> ()</td></tr>
 <tr class="memdesc:a1cf15aced1fd667cb33ce8a70ec1fc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria <a class="el" href="class_max_heap.html">MaxHeap</a> com a key igual ao ID da <a class="el" href="class_encomenda.html">Encomenda</a> e value igual à divisão da recompensa pelo espaço ocupado pela encomenda, sendo que o espaço será a soma do voluma e do peso da encomenda.  <a href="class_otimizacao.html#a1cf15aced1fd667cb33ce8a70ec1fc11">More...</a><br /></td></tr>
 <tr class="separator:a1cf15aced1fd667cb33ce8a70ec1fc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +133,25 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae8621f8f05ecfb55f75f5ed6547d73f6" name="ae8621f8f05ecfb55f75f5ed6547d73f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8621f8f05ecfb55f75f5ed6547d73f6">&#9670;&nbsp;</a></span>cenario1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Otimizacao::cenario1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o número de estafetas necessárias, pela solução greedy, para entregar todos os pedidos possíveis. </p>
+
+</div>
+</div>
 <a id="a4447d0958de07e03aa5a896d381cced7" name="a4447d0958de07e03aa5a896d381cced7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4447d0958de07e03aa5a896d381cced7">&#9670;&nbsp;</a></span>cenario2()</h2>
 
@@ -179,6 +207,25 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna o tamanho do dataset mediante o cenário em análise. </p>
+
+</div>
+</div>
+<a id="ad705f041c4c2f673804dc6237b79e36a" name="ad705f041c4c2f673804dc6237b79e36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad705f041c4c2f673804dc6237b79e36a">&#9670;&nbsp;</a></span>makemaxheap_estafetas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_max_heap.html">MaxHeap</a>&lt; int, int &gt; Otimizacao::makemaxheap_estafetas </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria <a class="el" href="class_max_heap.html">MaxHeap</a> com a key igual ao ID da <a class="el" href="class_estafeta.html">Estafeta</a> e value igual ao volume da estafeta correspondente. </p>
 
 </div>
 </div>
@@ -239,6 +286,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a69a508d2ede6d2f0539ce970093849b5" name="a69a508d2ede6d2f0539ce970093849b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a508d2ede6d2f0539ce970093849b5">&#9670;&nbsp;</a></span>makeminheap_pedidos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_min_heap.html">MinHeap</a>&lt; int, int &gt; Otimizacao::makeminheap_pedidos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria <a class="el" href="class_min_heap.html">MinHeap</a> com a key igual ao ID da <a class="el" href="class_encomenda.html">Encomenda</a> e value igual ao volume do pedido correspondente. </p>
+
+</div>
+</div>
 <a id="a70e66ad590030fc033a9118568b8803e" name="a70e66ad590030fc033a9118568b8803e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70e66ad590030fc033a9118568b8803e">&#9670;&nbsp;</a></span>setarmazem()</h2>
 
@@ -258,8 +324,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_otimizacao_8h_source.html">Otimizacao.h</a></li>
-<li><a class="el" href="_otimizacao_8cpp.html">Otimizacao.cpp</a></li>
+<li>C:/Users/clfma/Desktop/Faculdade/Y2S2/DA/Projeto1/codigo/<a class="el" href="_otimizacao_8h_source.html">Otimizacao.h</a></li>
+<li>C:/Users/clfma/Desktop/Faculdade/Y2S2/DA/Projeto1/codigo/<a class="el" href="_otimizacao_8cpp.html">Otimizacao.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
