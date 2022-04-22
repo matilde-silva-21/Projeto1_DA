@@ -18,6 +18,9 @@ int main() {
     double elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
 
     cout << "Time elapsed: "<<elapsed<<"\nAverage time of each iteration (elapsed time/n): "<<elapsed/(o1.getn(3))<<endl;
+    
+    //cenario1
+    //std::cout << o1.cenario1() << endl;
 
     //cenario2
     //std::cout << o1.cenario2() << endl;
