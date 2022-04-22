@@ -24,6 +24,20 @@ public:
      * Retorna o tamanho do dataset mediante o cenário em análise
      */
     int getn(int n);
+    
+/*cenario 1*/
+    /** @brief
+     * Cria MaxHeap com a key igual ao ID da Estafeta e value igual ao volume da estafeta correspondente.
+    */
+    MaxHeap<int, int> makemaxheap_estafetas();
+    /** @brief
+     * Cria MinHeap com a key igual ao ID da Encomenda e value igual ao volume do pedido correspondente
+     */
+    MinHeap<int, int> makeminheap_pedidos();
+    /** @brief
+     * Retorna o número de estafetas necessárias, pela solução greedy, para entregar todos os pedidos possíveis
+     */
+    int cenario1();
 
 /*cenario 2*/
     /** @brief
