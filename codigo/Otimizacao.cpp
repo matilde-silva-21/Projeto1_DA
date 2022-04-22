@@ -13,6 +13,40 @@ Otimizacao::Otimizacao(Armazem &a1): armazem(a1) {
 
 }
 
+int Otimizacao::cenario1() {
+    MaxHeap<int, int> carrinhas = makemaxheap_estafetas();
+    MinHeap<int, int> pedidos = makeminheap_pedidos();
+
+
+    int total = 0, numPedidos = 0;
+    bool usedEstafeta;
+    while(carrinhas.getSize() > 0 && pedidos.getSize() > 0){
+        usedEstafeta = false;
+        int carrinhaID = carrinhas.removeMax().first;
+        Estafeta carrinha = estafetas.find(carrinhaID)->second;
+        int carrinhaVol = carrinha.getvolmax(), carrinhaPeso = carrinha.getpesomax();
+        while(carrinhaVol >= 0 && carrinhaPeso >= 0){
+            int pedidoID = pedidos.removeMin().first;
+            Encomenda pedido = encomendas.find(pedidoID)->second;
+            int pedidoVol = pedido.getvolume(), pedidoPeso = pedido.getpeso();
+            if((carrinhaVol - pedidoVol) >= 0 && (carrinhaPeso - pedidoPeso) >= 0){
+                carrinhaVol -= pedidoVol;
+                carrinhaPeso -= pedidoPeso;
+                usedEstafeta = true;
+                numPedidos++;
+            }else{
+                pedidos.insert(pedidoID, pedidoVol);
+                if(usedEstafeta){
+                    total++;
+                }
+                break;
+            }
+        }
+    }
+    std::cout << "Numero de pedidos realizados: " << numPedidos << endl;
+    return total;
+}
+
 int Otimizacao::cenario2() {
     MaxHeap<int, int> recompensa = makemaxheap_recompensa();
     MinHeap<int, int> custo = makeminheap_custo();
@@ -58,6 +92,22 @@ float Otimizacao::cenario3() {
         else{break;}
     }
     return (sum/cnt);
+}
+
+MaxHeap<int, int> Otimizacao::makemaxheap_estafetas() {
+    MaxHeap<int, int> carrinhas(estafetas.size(), -1);
+    for(auto& i: estafetas){
+        carrinhas.insert(i.first, i.second.getvolmax());
+    }
+    return carrinhas;
+}
+
+MinHeap<int, int> Otimizacao::makeminheap_pedidos() {
+    MinHeap<int, int> pedidos(encomendas.size(), -1);
+    for(auto& i: encomendas){
+        pedidos.insert(i.first, i.second.getvolume());
+    }
+    return pedidos;
 }
 
 MaxHeap<int, int> Otimizacao::makemaxheap_recompensa() {
